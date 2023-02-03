@@ -33,30 +33,30 @@ dataSources:
     startBlock: 752073
     processor:
       file: "./node_modules/@subql/frontier-evm-processor/dist/bundle.js"
-      options:
-        # Must be a key of assets
-        abi: erc20
-        # Contract address (or recipient if transfer) to filter, if `null` should be for contract creation
-        address: "0xe3e43888fa7803cdc7bea478ab327cf1a0dc11a7"
-    assets:
-      erc20:
-        file: ./erc20.abi.json
+    #   options:
+    #     # Must be a key of assets
+    #     abi: erc20
+    #     # Contract address (or recipient if transfer) to filter, if `null` should be for contract creation
+    #     address: "0xe3e43888fa7803cdc7bea478ab327cf1a0dc11a7"
+    # assets:
+    #   erc20:
+    #     file: ./erc20.abi.json
     mapping:
       file: ./dist/index.js
       handlers:
         - handler: handleFrontierEvmEvent
           kind: substrate/FrontierEvmEvent
-          filter:
-            topics:
-              - "Transfer(address indexed from,address indexed to,uint256 value)"
-              - null
-              - null
-              - null
+          # filter:
+          #   topics:
+          #     - "Transfer(address indexed from,address indexed to,uint256 value)"
+          #     - null
+          #     - null
+          #     - null
         - handler: handleFrontierEvmCall
           kind: substrate/FrontierEvmCall
-          filter:
+          # filter:
             ## The function can either be the function fragment or signature
             # function: '0x095ea7b3'
             # function: '0x7ff36ab500000000000000000000000000000000000000000000000000000000'
             # function: approve(address,uint256)
-            function: "approve(address to,uint256 value)"
+            # function: "approve(address to,uint256 value)"

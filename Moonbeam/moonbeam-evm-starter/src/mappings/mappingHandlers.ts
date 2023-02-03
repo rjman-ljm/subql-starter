@@ -3,7 +3,7 @@ import {
   FrontierEvmEvent,
   FrontierEvmCall,
 } from "@subql/frontier-evm-processor";
-import { BigNumber } from "ethers";
+import { BigNumber } from "ethers"
 
 // Setup types from ABI
 type TransferEventArgs = [string, string, BigNumber] & {
